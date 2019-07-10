@@ -1,0 +1,44 @@
+<!--
+============================================
+; Title:  Ibrahim-Error.html
+; Author: Alsaddig Ibrahim
+; Date:   7/10/2019
+; Description: Demonstrates client-side JavaScript
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client-Side JavaScript</title>
+
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<h1 id=""></h1>
+<script>
+  document.getElementById('bar').innerHTML = "Hello World!";
+</script>
+<div id="Alsaddig"></div>
+<script>
+  document.getElementById('Alsaddig').innerHTML = "<h1>Hello World!</h1>" +
+    <table> +
+  "<tr>"+
+        "<th>Welcome My Full Name: </th>" +
+     "</tr>" +
+       "<tr><td>Alsaddig Ibrahim</td></tr>" +
+    "<tr><td>My Age :37</td></tr>" +
+     "</table>"
+</script>
+<h3 id="tar"></h3>
+
+<script>
+  var h3 = document.getElementById('tar');
+  h3.insertAdjacentHTML('afterbegin', 'Today Date!');
+ 
+ document.write("<h3>"+new Date().toLocaleDateString()+"<h3>");
+</script>
+</body>
+</html>
