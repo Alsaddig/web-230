@@ -1,0 +1,40 @@
+<!-- /*
+============================================
+; Title:  Weilbacher-Discussion-7.1.js
+; Author: Andrew Weilbacher
+; Contributor:
+; Date: 11 July 2019
+; Description: Displays a formatted header and output of example JS document write.
+;===========================================
+*/
+// header
+const header = require('./Weilbacher-header.js');
+console.log(header.display("Andrew", "Weilbacher", "Discussion 7.1"));
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<h1 id="bar"></h1>
+<script>
+  // create H1 with getElement
+  document.getElementById('bar').innerHTML = "Behold, My To-Do List!";
+</script>
+<div id="todo"></div>
+<script>
+  // create inner table with getElement
+  document.getElementById('todo').innerHTML ="<h1>TODO LIST</h1>" +
+  "<table>" +
+    "<thread>" +
+      "<tr>" +
+        "<th>List Item(s)</th>" +
+      "</tr>" +
+    "</thread>" +
+      "<tbody>" +
+        "<tr><td>Do Homework for Javascript Class</td></tr>" +
+        "<tr><td>Do Math Work</td></tr> "+
+        "<tr><td>Study Spanish</td></tr>" +
+        "<tr><td>Suffer Through More Episodes of Game of Thrones</td></tr>" +
+      "</tbody>" +
+  "</table>"
+</script>
+</html>
