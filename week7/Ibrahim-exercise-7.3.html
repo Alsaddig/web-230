@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 7.3</title>
+
+  <!-- you will need to the href to point to your root directories css file -->
+  <link rel="stylesheet" href="/path/to/your/root/css/file">
+</head>
+<body>
+
+<div id="list"></div>
+<script>
+  document.getElementById('list').innerHTML = "<h1>SHOPPING LIST v.1</h1>" ;
+
+  document.write("<ol>"+
+    "<li>" +'Oranges' +"</li>"+
+    "<li>" +'Apples' +"</li>"+
+    "<li>" +'Pears' +"</li>"+
+    "<li>" +'Limes' +"</li>"+
+  "<li>" +'Lemons' +"</li>"+
+  "</ol>");
+</script>
+<div id="list1"></div>
+<table>
+  <tr class="id">
+    <th>Id</th>
+    <th>Item</th>
+   </tr>
+  <tr>
+    <td>1</td>
+    <td>Oranges</td>
+  </tr>
+  <tr class="app">
+    <td>2</td>
+    <td>Apples</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Pears</td>
+  </tr>
+  <tr class="lim">
+    <td>4</td>
+    <td>Limes</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Lemons</td>
+  </tr>
+</table>
+<script>
+  document.getElementById('list1').innerHTML = "<h1>SHOPPING LIST v.2</h1>" ;
+
+
+  document.querySelector("tr.id").style.backgroundColor = "blue";
+  document.querySelector("tr.id").style.color= "white";
+  document.querySelector("tr.app").style.backgroundColor = "lightblue";
+  document.querySelector("tr.lim").style.backgroundColor = "lightblue";
+</script>
+
+
+
+
+
+</body>
+</html>
