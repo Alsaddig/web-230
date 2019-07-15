@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 7.4</title>
+
+  <!-- you will need to the href to point to your root directories css file -->
+  <link rel="stylesheet" href="/path/to/your/root/css/file">
+
+</head>
+<body>
+    <script>
+        function Conform_Delete()
+        {
+           return conform("Are You Sure Want to Delete?");
+        }
+    </script>
+  <div id="list1"></div>
+  <table border=".01">
+    <tr class="id">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Functions</th>
+     </tr>
+    <tr>
+      <td>1</td>
+      <td>Laptop</td>
+      <td>1,500.99</td>
+      <td><a href="javascript:alert('1');">EDIT |</a>
+        <a href="javascript:;" onClick="if(confirm('Are you sure you want to delete')){del_product(id);}else{ }" class="btn btn-xs btn-danger btn-delete" title="Del Product">DELETE</a></td>
+    </tr>
+    <tr class="app">
+      <td>2</td>
+      <td>Motherboard</td>
+      <td>35.70</td>
+      <td><a href="javascript:alert('2');">EDIT |</a>
+        <a href="javascript:;" onClick="if(confirm('Are you sure you want to delete')){del_product(id);}else{ }" class="btn btn-xs btn-danger btn-delete" title="Del Product">DELETE</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Monitor</td>
+      <td>174.99</td>
+      <td><a href="javascript:alert('3');">EDIT |</a>
+        <a href="javascript:;" onClick="if(confirm('Are you sure you want to delete')){del_product(id);}else{ }" class="btn btn-xs btn-danger btn-delete" title="Del Product">DELETE</a></td>
+    </tr>
+    <tr class="lim">
+      <td>4</td>
+      <td>Mouse</td>
+      <td>13.99</td>
+      <td><a href="javascript:alert('4');">EDIT |</a>
+
+        <a href="javascript:;" onClick="if(confirm('Are you sure you want to delete')){del_product(id);}else{ }" class="btn btn-xs btn-danger btn-delete" title="Del Product">DELETE</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Keyboard</td>
+      <td>14.50</td>
+      <td><a href="javascript:alert('5');">EDIT |</a>
+        <a href="javascript:;" onClick="if(confirm('Are you sure you want to delete')){del_product(id);}else{ }" class="btn btn-xs btn-danger btn-delete" title="Del Product">DELETE</a></td>
+    </tr>
+  </table>
+
+  <script>
+    document.getElementById('list1').innerHTML = "<h1>Computer Components</h1>" ;
+
+
+    document.querySelector("tr.id").style.backgroundColor = "#3CB0E8";
+    document.querySelector("tr.id").style.color= "white";
+    document.querySelector("tr.app").style.backgroundColor = "lightblue";
+    document.querySelector("tr.lim").style.backgroundColor = "lightblue";
+  </script>
+
+
+</body>
+</html>
