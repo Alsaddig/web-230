@@ -1,0 +1,78 @@
+<!--
+============================================
+; Title:  Ibrahim-Error.html
+; Author: Alsaddig Ibrahim
+; Date:   July/ 17/ 2019
+; Description: Demonstrates the use of jQuery
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    table {
+          border-collapse: collapse;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 5px;
+        }
+
+        th {
+          background-color: steelblue;
+          color: white;
+        }
+
+        tr:nth-child(even) {
+          background-color: lightsteelblue;
+        }
+
+  </style>
+    <meta charset="UTF-8">
+    <title>jQuery Click</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<p>Welcome to Bellevue University!</p>
+
+<br/>
+<table>
+    <tr>
+        <td><a href="#" class="studentId">1</a></td>
+        <td>Alsaddig Ibrahim</td>
+    </tr>
+    <tr>
+        <td><a href="#" class="studentId">2</a></td>
+        <td>Adam Ibrahim</td>
+    </tr>
+    <tr>
+        <td><a href="#" class="studentId">3</a></td>
+        <td>Mohamed Ali</td>
+    </tr>
+</table>
+
+
+<script>
+    $(function () {
+        $("h").click(function () {
+            $(this).css("background-color", "red");
+            $(this).css("color", "white");
+        });
+
+        $("#studentId").click(function (event) {
+            event.preventDefault();
+            var studentId = $(this).text();
+            var studentName = $(this).closest("td").next().text();
+            alert("Student_ID: " + studentId + "\nStudent_Name: " + studentName);
+        });
+    });
+</script>
+
+</body>
+</html>
