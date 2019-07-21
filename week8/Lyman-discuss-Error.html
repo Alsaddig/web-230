@@ -1,0 +1,39 @@
+<!--
+============================================
+; Title:  Discussion 8.1 - 2 errors
+; Author: Ashleigh Lyman
+; Date:   18 July 2019
+; Modified By:
+; Description:
+; Create HTML page with jquery errors
+;===========================================
+-->
+
+
+<!-- Importing header file
+      const header = require('./Lyman-header.js');
+    Output header
+      console.log(header.display("Ashleigh", "Lyman", "Assignment 8.1 - HTML with jquery - 2 errors));
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("p").click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>Click Me! I will disappear!</p>
+</body>
+</html>
