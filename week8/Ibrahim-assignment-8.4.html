@@ -1,0 +1,104 @@
+<!--
+==================================================================================================================
+; Title: Assignment-8.4.html
+; Author: Alsaddig Ibrahim
+; Date: 21 July 2019
+==================================================================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 8.4</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+       <style type="text/css">
+      #employee tbody tr:hover {
+        cursor: pointer;
+        background-color: #ffff99;
+      }
+      #container
+      {
+        width: 950px;
+        margin: 0 auto;
+      }
+      table, th, td {
+        border: 1px solid #d4e2ec;
+      }
+      table {
+        border-collapse: collapse;
+        border-left: 0;
+      }
+      td, th {
+        border-bottom: 0;
+        border-right: 0;
+      }
+      th {
+        background-color: #4987ba;
+        color: #ffffff;
+      }
+      tr:nth-child(2n) {
+        background-color: #b5cae5;
+      }
+      tr:hover,
+      tr:focus {
+        background-color: #feff9c;
+        cursor: pointer;
+      }
+      td {
+        padding: .25em .5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+    <div id="emps"></div>
+    <script type="text/javascript">
+    
+      function alertThePress(employee) {
+        alert('This site says...\n' + employee.id + ' ' + employee.firstName + ' ' + employee.lastName + ' ' + employee.title);
+      }
+      
+      function Employee(id, firstName, lastName, title) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.title = title;
+      }
+     
+      function getId(package) {
+        return package.find('td:first-child').text() - 1;
+      }
+        var employees = new Array(5);
+        employees[0] = new Employee(1, 'Thomas', 'Edison', 'Software Engineer');
+        employees[1] = new Employee(2, 'Benjamin', 'Franklin', 'Programmer');
+        employees[2] = new Employee(3, 'Nikola', 'Tesla', 'Project Manager');
+        employees[3] = new Employee(4, 'Charles', 'Babbage', 'Product Manager');
+        employees[4] = new Employee(5, 'Alexander', 'Bell', 'Business Analyst');
+        var output = '';
+         output += '<table role="table"><caption class="table-caption"><h1>Employee Listing</h1></caption><thead><tr role="row"><th role="columnheader">Id</th><th role="columnheader">First Name</th><th role="columnheader">Last Name</th><th role="columnheader">Title</th></tr></thead><tbody>';
+        employees.forEach(employee => {
+          output += '<tr role="row" tabindex="' + employee.id + '">';
+            output += '<td role="cell">' + employee.id + '</td>' + '<td role="cell">' + employee.firstName + '</td>' + '<td role="cell">' + employee.lastName + '</td>' + '<td role="cell">' + employee.title + '</td>';
+          output += '</tr>';
+        });
+        output += '</tbody></table>';
+        document.getElementById("emps").innerHTML = output;
+        $(function () {
+          $("table tr").click(function () {
+            alertThePress(employees[getId($(this))]);
+          });
+          $("table tr").keypress(function (event) {
+            if (event.which == 13) {
+              alertThePress(employees[getId($(this))]);
+            }
+          });
+        });
+    </script>
+    </div>
+  </body>
+</html>
