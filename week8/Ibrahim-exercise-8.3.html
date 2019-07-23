@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Exercise 8.3</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- you will need to the href to point to your root directories css file -->
+  <link rel="stylesheet" href="/path/to/your/root/css/file">
+<style>
+  .hide {
+      display: none;
+    }
+    #container{
+      width: 950px;
+      margin: 0 auto;
+      background-color: aqua;
+
+    }
+    .toggle {
+      padding: .5em 1.25em;
+      border-radius: 4px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: none;
+      background-color: rgb(20, 223, 105);
+      color: #fff;
+      border: 1px solid transparent;
+    }
+    .toggle:hover,
+    .toggle:focus {
+      background-color: rgb(17, 191, 17);
+    }
+    .toggle:active {
+      color: rgb(223,117,20);
+      background-color: transparent;
+      border-color: rgb(223,117,20);
+    }
+    .foo {
+      cursor: pointer;
+    }
+    td {
+      color: #fff;
+      padding: .5em 1em;
+      text-decoration-color: rgba(255,255,255,0);
+      text-decoration-line: underline;
+    }
+    td:hover {
+      text-decoration-color: rgba(255,255,255,1);
+    }
+    td:active {
+      color: rgb(129, 16, 45);
+      background-color: #fff;
+    }
+    tr:nth-child(2n-1) {
+      background-color: rgb(17, 92, 14);
+    }
+    tr:nth-child(2n) {
+      background-color: rgb(20, 185, 116);
+    }
+    table {
+      margin: 20px 0 20px 20px;
+    }
+
+
+</style>
+</head>
+<body >
+  <div id="container">
+    <h1> Lorem Ipsum </h1>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus risus sapien,
+  eget mattis elit egestas ut. Vivamus convallis eros ut nulla elementum efficitur. Mauris id tellus enim. Nam aliquam risus lacus.
+   Quisque molestie erat in arcu gravida, ac suscipit metus aliquam. Nam non tempor nulla. Nunc sollicitudin cursus ex sit amet pellentesque.
+  Fusce in dolor sed eros lobortis sollicitudin. Fusce quis faucibus ante, vel egestas leo.
+
+</p>
+<button name="Toggle" class="toggle">Hide</button>
+
+  <script>
+    // Part A:
+    // Attach an event handler
+    $(".toggle").on("click", function(event) {
+      // Prevent the default button action
+      event.preventDefault();
+      // Assign the p tag befor the button to this variable
+      var paragraph = $(this).prev();
+      // Toggle the hide class on and off
+      paragraph.toggleClass("hide");
+      // Toggle the button text based upon the presence of the hide class
+      paragraph.hasClass("hide") ? $(this).text("Show") : $(this).text("Hide");
+    });
+    // Part B:
+    // Variables:
+   // var output = '';
+    var fruit = [
+      {
+        id: 1,
+        type: 'apple'
+      },
+      {
+        id: 3,
+        type: 'orange'
+      },
+      {
+        id: 3,
+        type: 'melon'
+      },
+      {
+        id: 4,
+        type: 'limes'
+      },
+      {
+        id: 5,
+        type: 'lemon'
+      },
+    ];
+    // Build the table output
+    var  output = '<table id="fruit">';
+    fruit.forEach(function(item) {
+      output += '<tr><td id=' + item.id + ' class="foo">' + item.type + '</td></tr>';
+    });
+    output += '</table>';
+    // Output:
+    $(".toggle").after(output);
+      $(".foo").on('click', function() {
+      alert('Id: ' + $(this).attr('id') + ' Type: ' + $(this).text());
+    });
+  </script>
+  </div>
+</body>
+</html>
